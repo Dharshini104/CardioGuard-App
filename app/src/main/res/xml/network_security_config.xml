@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+
+    <!-- Default: allow system certificates -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- Explicitly allow Render backend -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">
+            cardioguard-backend-9g9x.onrender.com
+        </domain>
+
+        <!-- 🔥 THIS WAS MISSING -->
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+</network-security-config>
